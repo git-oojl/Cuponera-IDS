@@ -30,18 +30,49 @@
       @switch (selectedCategory) {
         @case ('candies') {
           <h2>Dulces</h2>
-          <p>First</p>
+          <ng-container
+            *ngTemplateOutlet="couponTemplate; context: { category: 'candies' }"
+          ></ng-container>
         }
         @case ('drinks') {
           <h2>Bebidas</h2>
-          <p>Second</p>
+          <ng-container
+            *ngTemplateOutlet="couponTemplate; context: { category: 'drinks' }"
+          ></ng-container>
         }
         @case ('meats') {
           <h2>Carnes</h2>
-          <p>Third</p>
+          <ng-container
+            *ngTemplateOutlet="couponTemplate; context: { category: 'meats' }"
+          ></ng-container>
         }
       }
       <p class="coupon-count">Cupones cargados: {{ coupons.length }}</p>
     </section>
+
+    <ng-template #couponTemplate let-category="category">
+      <ion-grid class="coupon-grid">
+        <ion-row>
+          @for (coupon of coupons | filterCouponCategory: category; track coupon.idProduct) {
+            <ion-col size="6" size-md="4" size-lg="3">
+              <ion-card
+                class="coupon-card"
+                button="true"
+                tabindex="0"
+                [color]="coupon.active ? 'secondary' : 'light'"
+                (click)="changeActive(coupon)"
+                (keydown)="onCardKeydown($event, coupon)"
+              >
+                <ion-img [src]="coupon.img" [alt]="coupon.name"></ion-img>
+                <ion-card-header>
+                  <ion-card-subtitle>{{ coupon.discount }}% descuento</ion-card-subtitle>
+                  <ion-card-title>{{ coupon.name }}</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          }
+        </ion-row>
+      </ion-grid>
+    </ng-template>
   </div>
 </ion-content>
