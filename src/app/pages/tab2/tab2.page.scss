@@ -13,3 +13,45 @@
   margin: 0;
   font-size: 18px;
 }
+
+.demo-modal {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+
+.demo-modal h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.demo-modal ion-list {
+  width: 100%;
+}
+
+.demo-section {
+  width: 100%;
+}
+
+.demo-section ion-text {
+  display: block;
+  text-align: center;
+}
+
+.demo-section p {
+  margin: 0 0 10px;
+  color: var(--ion-color-medium);
+}
+
+.qr-demo {
+  display: grid;
+  justify-items: center;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 8px 0 12px;
+}

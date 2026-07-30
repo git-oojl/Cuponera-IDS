@@ -3,6 +3,11 @@
     <ion-title>
       Canjear
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" aria-label="Abrir menú demo" (click)="openDemoCoupons()">
+        Demo
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -28,4 +33,88 @@
       </ion-text>
     }
   </div>
+
+  <ion-modal [isOpen]="demoModalOpen" (didDismiss)="closeDemoCoupons()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Demo</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeDemoCoupons()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <div class="ion-padding demo-modal">
+          <section class="demo-section qr-demo">
+            <ion-text>
+              <h2>QR para escanear</h2>
+              <p>{{ selectedDemoCoupon.name }} - {{ selectedDemoCoupon.discount }}% descuento</p>
+            </ion-text>
+
+            <qrcode
+              [qrdata]="demoQRCode"
+              [width]="220"
+              errorCorrectionLevel="M"
+              elementType="canvas"
+              ariaLabel="Codigo QR de cupón demo"
+            ></qrcode>
+          </section>
+
+          <section class="demo-section">
+            <ion-text>
+              <h2>Elegir QR</h2>
+              <p>Otro teléfono puede escanear cualquiera de estos cupones.</p>
+            </ion-text>
+
+            <ion-list>
+              @for (coupon of qrCoupons; track coupon.idProduct) {
+                <ion-item
+                  button="true"
+                  [color]="coupon.idProduct === selectedDemoCoupon.idProduct ? 'secondary' : undefined"
+                  (click)="selectDemoCoupon(coupon)"
+                >
+                  <ion-label>
+                    <h3>{{ coupon.name }}</h3>
+                    <p>{{ coupon.category }} - {{ coupon.discount }}%</p>
+                  </ion-label>
+                </ion-item>
+              }
+            </ion-list>
+          </section>
+
+          <section class="demo-section">
+            <ion-text>
+              <h2>Inventario de este teléfono</h2>
+              <p>Estos cambios se guardan en el dispositivo para la demostración.</p>
+            </ion-text>
+
+            <div class="demo-actions">
+              <ion-button size="small" (click)="restoreDefaultInventory()">12 base</ion-button>
+              <ion-button size="small" color="tertiary" (click)="loadAllDemoInventory()">Todo demo</ion-button>
+              <ion-button size="small" color="medium" (click)="clearInventory()">Vaciar</ion-button>
+            </div>
+
+            <ion-list>
+              @for (coupon of qrCoupons; track coupon.idProduct) {
+                <ion-item
+                  button="true"
+                  [color]="hasInventoryCoupon(coupon) ? 'secondary' : undefined"
+                  (click)="toggleInventoryCoupon(coupon)"
+                >
+                  <ion-label>
+                    <h3>{{ coupon.name }}</h3>
+                    <p>
+                      {{ hasInventoryCoupon(coupon) ? 'En inventario' : 'Agregar al inventario' }}
+                    </p>
+                  </ion-label>
+                </ion-item>
+              }
+            </ion-list>
+          </section>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
