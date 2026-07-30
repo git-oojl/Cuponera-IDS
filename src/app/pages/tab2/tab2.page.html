@@ -13,7 +13,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-padding">
-    <p>Seccion para canjear cupones.</p>
+  <div class="ion-padding h-100 qr-page">
+    @if (QRCode) {
+      <qrcode
+        [qrdata]="QRCode"
+        [width]="260"
+        errorCorrectionLevel="M"
+        elementType="canvas"
+        ariaLabel="Codigo QR de cupones activos"
+      ></qrcode>
+    } @else {
+      <ion-text color="medium">
+        <p>No hay cupones activos</p>
+      </ion-text>
+    }
   </div>
 </ion-content>

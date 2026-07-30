@@ -65,14 +65,20 @@ export class Tab1Page {
     }
   }
 
-  changeActive(coupon: Coupon): void {
+  async changeActive(coupon: Coupon): Promise<void> {
     coupon.active = !coupon.active;
+
+    try {
+      await this.couponService.saveCoupons(this.coupons);
+    } catch {
+      coupon.active = !coupon.active;
+    }
   }
 
   onCardKeydown(event: KeyboardEvent, coupon: Coupon): void {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      this.changeActive(coupon);
+      void this.changeActive(coupon);
     }
   }
 }
