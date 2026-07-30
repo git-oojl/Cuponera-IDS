@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-label="Chuletas de cordero">
+  <rect width="320" height="220" rx="18" fill="#fff2ec"/>
+  <path d="M113 124c-14-28 4-62 36-69 37-8 69 18 65 52-4 36-81 55-101 17z" fill="#b94d45"/>
+  <circle cx="166" cy="100" r="20" fill="#ffd8c8"/>
+  <rect x="201" y="121" width="50" height="16" rx="8" fill="#f7dec8" transform="rotate(22 201 121)"/>
+  <text x="160" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#263238">Chuletas de cordero</text>
+</svg>

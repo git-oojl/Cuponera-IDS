@@ -1,0 +1,25 @@
+.coupons-page {
+  display: grid;
+  gap: 18px;
+}
+
+.category-panel {
+  min-height: 140px;
+  padding: 16px 0;
+}
+
+.category-panel h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.category-panel p {
+  margin: 0;
+}
+
+.coupon-count {
+  margin-top: 18px;
+  color: var(--ion-color-medium);
+  font-size: 14px;
+}

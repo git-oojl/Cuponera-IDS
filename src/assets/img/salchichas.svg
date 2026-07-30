@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-label="Salchichas">
+  <rect width="320" height="220" rx="18" fill="#fff1e8"/>
+  <rect x="83" y="82" width="154" height="30" rx="15" fill="#c8644d" transform="rotate(-9 83 82)"/>
+  <rect x="80" y="118" width="160" height="30" rx="15" fill="#d4775b" transform="rotate(8 80 118)"/>
+  <text x="160" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#263238">Salchichas</text>
+</svg>

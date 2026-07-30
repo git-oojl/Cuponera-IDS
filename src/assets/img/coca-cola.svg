@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-label="Coca-Cola">
+  <rect width="320" height="220" rx="18" fill="#f9eeee"/>
+  <rect x="128" y="48" width="64" height="118" rx="14" fill="#d94132"/>
+  <rect x="136" y="70" width="48" height="64" rx="8" fill="#ffffff"/>
+  <text x="160" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#d94132">COLA</text>
+  <text x="160" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#263238">Coca-Cola</text>
+</svg>

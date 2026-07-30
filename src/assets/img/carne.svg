@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-label="Carne">
+  <rect width="320" height="220" rx="18" fill="#fff1ef"/>
+  <path d="M94 115c0-38 50-62 94-47 38 13 53 51 31 75-26 29-125 20-125-28z" fill="#c94f4f"/>
+  <ellipse cx="167" cy="112" rx="40" ry="26" fill="#ffd2c8"/>
+  <text x="160" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#263238">Carne</text>
+</svg>

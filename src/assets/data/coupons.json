@@ -1,0 +1,86 @@
+[
+  {
+    "idProduct": 1,
+    "img": "assets/img/galletas.svg",
+    "name": "Galletas",
+    "category": "candies",
+    "discount": 15
+  },
+  {
+    "idProduct": 2,
+    "img": "assets/img/chicles-menta.svg",
+    "name": "Chicles de menta",
+    "category": "candies",
+    "discount": 10
+  },
+  {
+    "idProduct": 3,
+    "img": "assets/img/chocolate-leche.svg",
+    "name": "Chocolate con leche",
+    "category": "candies",
+    "discount": 20
+  },
+  {
+    "idProduct": 4,
+    "img": "assets/img/caramelos-fruta.svg",
+    "name": "Caramelos de fruta",
+    "category": "candies",
+    "discount": 12
+  },
+  {
+    "idProduct": 5,
+    "img": "assets/img/vino.svg",
+    "name": "Vino",
+    "category": "drinks",
+    "discount": 18
+  },
+  {
+    "idProduct": 6,
+    "img": "assets/img/cerveza-artesanal.svg",
+    "name": "Cerveza artesanal",
+    "category": "drinks",
+    "discount": 14
+  },
+  {
+    "idProduct": 7,
+    "img": "assets/img/coca-cola.svg",
+    "name": "Coca-Cola",
+    "category": "drinks",
+    "discount": 9
+  },
+  {
+    "idProduct": 8,
+    "img": "assets/img/te-verde.svg",
+    "name": "Te verde",
+    "category": "drinks",
+    "discount": 11
+  },
+  {
+    "idProduct": 9,
+    "img": "assets/img/carne.svg",
+    "name": "Carne",
+    "category": "meats",
+    "discount": 17
+  },
+  {
+    "idProduct": 10,
+    "img": "assets/img/chuletas-cordero.svg",
+    "name": "Chuletas de cordero",
+    "category": "meats",
+    "discount": 22
+  },
+  {
+    "idProduct": 11,
+    "img": "assets/img/pollo.svg",
+    "name": "Pollo",
+    "category": "meats",
+    "discount": 13
+  },
+  {
+    "idProduct": 12,
+    "img": "assets/img/salchichas.svg",
+    "name": "Salchichas",
+    "category": "meats",
+    "discount": 16
+  }
+]

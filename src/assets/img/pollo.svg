@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220" role="img" aria-label="Pollo">
+  <rect width="320" height="220" rx="18" fill="#fff8ea"/>
+  <ellipse cx="148" cy="116" rx="62" ry="42" fill="#f0b85a"/>
+  <circle cx="216" cy="91" r="19" fill="#f5d6aa"/>
+  <rect x="207" y="98" width="58" height="15" rx="7" fill="#f5d6aa" transform="rotate(18 207 98)"/>
+  <text x="160" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#263238">Pollo</text>
+</svg>

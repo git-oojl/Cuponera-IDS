@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Cupones
+      Mis cupones
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,39 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Cupones</ion-title>
+      <ion-title size="large">Mis cupones</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-padding">
-    <p>Seccion de cupones.</p>
+  <div class="ion-padding coupons-page">
+    <ion-segment [value]="selectedCategory" (ionChange)="onCategoryChange($event)">
+      <ion-segment-button value="candies">
+        <ion-label>Dulces</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="drinks">
+        <ion-label>Bebidas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="meats">
+        <ion-label>Carnes</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <section class="category-panel">
+      @switch (selectedCategory) {
+        @case ('candies') {
+          <h2>Dulces</h2>
+          <p>First</p>
+        }
+        @case ('drinks') {
+          <h2>Bebidas</h2>
+          <p>Second</p>
+        }
+        @case ('meats') {
+          <h2>Carnes</h2>
+          <p>Third</p>
+        }
+      }
+      <p class="coupon-count">Cupones cargados: {{ coupons.length }}</p>
+    </section>
   </div>
 </ion-content>
