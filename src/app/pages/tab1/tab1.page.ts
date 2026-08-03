@@ -27,6 +27,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { cameraOutline } from 'ionicons/icons';
 import { Coupon, ICouponData } from '../../models/coupon.model';
@@ -69,6 +70,7 @@ export class Tab1Page {
   selectedCategory: CouponCategory = 'candies';
 
   constructor(
+    private alertController: AlertController,
     private couponService: CouponService,
     private toastService: ToastService,
   ) {
@@ -88,12 +90,39 @@ export class Tab1Page {
   }
 
   async changeActive(coupon: Coupon): Promise<void> {
-    coupon.active = !coupon.active;
+    if (coupon.active) {
+      await this.updateCouponState(coupon, false);
+      return;
+    }
+
+    const alert = await this.alertController.create({
+      header: 'Canjear cupón',
+      message: `¿Quieres activar "${coupon.name}" para canjearlo?`,
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+        },
+        {
+          text: 'Sí, activar',
+          handler: async () => {
+            await this.updateCouponState(coupon, true);
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  private async updateCouponState(coupon: Coupon, active: boolean): Promise<void> {
+    const previousState = coupon.active;
+    coupon.active = active;
 
     try {
       await this.couponService.saveCoupons(this.coupons);
     } catch {
-      coupon.active = !coupon.active;
+      coupon.active = previousState;
     }
   }
 
