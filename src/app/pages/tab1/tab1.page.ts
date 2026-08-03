@@ -23,6 +23,7 @@ import {
   IonRow,
   IonSegment,
   IonSegmentButton,
+  IonText,
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
@@ -60,6 +61,7 @@ type CouponCategory = 'candies' | 'drinks' | 'meats';
     IonCardHeader,
     IonCardSubtitle,
     IonCardTitle,
+    IonText,
   ],
 })
 export class Tab1Page {
